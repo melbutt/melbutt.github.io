@@ -2431,7 +2431,7 @@ input, select, textarea {
 
 #one .about-photo {
 	display: block;
-	width: 30%;
+	width: 50%;
 	aspect-ratio: 1 / 1;
 	object-fit: cover;
 	border-radius: 50%;

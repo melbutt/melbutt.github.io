@@ -2319,3 +2319,175 @@ input, select, textarea {
 			}
 
 		}
+		/* ===================================================== */
+/* Mobile UX Fixes (added)                                */
+/* ===================================================== */
+
+/* 1. Nav was set to display:none below 736px with nothing to replace it,
+      leaving visitors with no way to move between sections on phones.
+      Keep it visible, shrink it, and let it scroll horizontally if it
+      doesn't all fit. */
+@media screen and (max-width: 736px) {
+
+	#header nav {
+		display: block;
+		position: relative;
+		right: auto;
+		top: auto;
+		height: auto;
+		line-height: normal;
+		width: 100%;
+		text-align: center;
+		overflow-x: auto;
+		white-space: nowrap;
+		-webkit-overflow-scrolling: touch;
+	}
+
+		#header nav ul {
+			display: inline-block;
+			white-space: nowrap;
+			padding: 0 0.5em;
+		}
+
+			#header nav ul li {
+				font-size: 0.75em;
+				margin: 0 0.4em;
+			}
+
+	#header {
+		height: auto;
+		padding: 0.6em 0;
+	}
+
+	body {
+		padding-top: 3.4em;
+	}
+
+}
+
+@media screen and (max-width: 736px) {
+
+	.main.style2 {
+		-moz-flex-wrap: wrap;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}
+
+
+	#one .mobile-photo {
+		width: 45%;
+	}
+
+}
+
+/* Home page: shift name/subtitle up slightly, bold the subtitle */
+@media screen and (max-width: 736px) {
+
+	#intro .content {
+		margin-top: -2em;
+	}
+
+	#intro p {
+		font-weight: 700;
+	}
+
+}
+
+/* About page: restore paragraph breaks (a rule earlier in this file
+   hides all <br> inside .content on mobile) and style "Hi there!" */
+@media screen and (max-width: 736px) {
+
+	#one .content br {
+		display: block;
+	}
+
+	#one .hi-there {
+		display: block;
+		margin-bottom: 0em;
+	}
+
+}
+
+/* Mobile nav menu titles: larger and bolder */
+@media screen and (max-width: 736px) {
+
+	#header nav ul li a {
+		font-size: 1em;
+		font-weight: 900;
+	}
+
+}
+
+@media screen and (max-width: 736px) {
+
+	#one .content p,
+	#two .content p,
+	#publications .content p {
+		font-size: 0.85em;
+	}
+
+}
+
+#one .about-photo {
+	display: block;
+	width: 30%;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+	border-radius: 50%;
+	margin: 0 auto 1.5em auto;
+}
+
+@media screen and (min-width: 737px) {
+
+	#one.main.style2.right {
+		justify-content: center;
+	}
+
+}
+
+#two .content p {
+	text-align: left;
+}
+
+#two .content h3 {
+	text-align: center;
+}
+
+#publications .content p {
+	text-align: left;
+}
+
+#publications .content h2 {
+	text-align: center;
+}
+
+.gallery article .image {
+	overflow: hidden;
+}
+
+.gallery article .image::after {
+	content: attr(data-name);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	color: #ffffff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 1em;
+	font-size: 1em;
+	font-weight: 900;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	pointer-events: none;
+	z-index: 2;
+}
+
+.gallery article .image:hover::after {
+	opacity: 1;
+}

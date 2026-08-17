@@ -1285,7 +1285,7 @@ input, select, textarea {
 			text-align: center;
 			cursor: default;
 			z-index: 1;
-			font-size: 0.9em;
+			font-size: 0.75em;
 		}
 
 		.poptrox-popup .nav-next,
